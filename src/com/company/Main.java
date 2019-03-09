@@ -15,8 +15,9 @@ public class Main {
         }
 
         MiddleQueue middleQueue= new MiddleQueue();
-        String[]operations = middleQueue.getOperations(inputs);
-        int[]values = middleQueue.getValues(inputs);
+        middleQueue.splitInput(inputs);
+        String[]operations = middleQueue.operations;
+        int[]values = middleQueue.values;
 
         middleQueue.handleOperations(operations,values);
     }

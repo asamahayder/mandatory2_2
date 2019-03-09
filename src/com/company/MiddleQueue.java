@@ -1,37 +1,28 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class MiddleQueue {
     Node head;
     Node tail;
     int size = 0;
+    String[] operations;
+    int[] values;
 
     public MiddleQueue() {
     }
 
-    public String[] getOperations(String[] inputs) {
-        String[] operations = new String[inputs.length];
+    public void splitInput(String[] inputs) {
+        operations = new String[inputs.length];
+        values = new int[inputs.length];
         for (int i = 0; i < inputs.length; i++) {
             String input = inputs[i];
             String operation = input.substring(0, 1);
             operations[i] = operation;
-        }
-        return operations;
-    }
-
-    public int[] getValues(String[] inputs) {
-        int[] values = new int[inputs.length];
-        for (int i = 0; i < inputs.length; i++) {
-            String input = inputs[i];
             if (!input.equals("E")) {
                 int value = Integer.parseInt(input.substring(2));
                 values[i] = value;
             }
         }
-        return values;
+        return;
     }
 
     public void handleOperations(String[] operations, int[] values){
@@ -59,14 +50,6 @@ public class MiddleQueue {
                     size--;
                 }
             }
-        }
-    }
-
-    public void printList(){
-        Node currentNode = head;
-        while (currentNode != null){
-            System.out.println(currentNode.value);
-            currentNode = currentNode.next;
         }
     }
 
