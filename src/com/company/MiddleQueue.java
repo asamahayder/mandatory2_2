@@ -35,14 +35,12 @@ public class MiddleQueue {
     }
 
     public void handleOperations(String[] operations, int[] values){
-        boolean firstValue = true;
         for (int i = 0; i < operations.length; i++) {
-            if (firstValue){
+            if (head == null){
                 if (!operations[i].equals("E")){
                     Node newNode = new Node(values[i]);
                     tail = newNode;
                     head = newNode;
-                    firstValue = false;
                     size++;
                 }
             }else if (operations[i].equals("L")){
