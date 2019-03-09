@@ -14,11 +14,17 @@ public class Main {
             inputs[i]=scanner.nextLine();
         }
 
-        MiddleQueue middleQueue= new MiddleQueue();
+        /*MiddleQueue middleQueue= new MiddleQueue();
         middleQueue.splitInput(inputs);
         String[]operations = middleQueue.operations;
         int[]values = middleQueue.values;
+        middleQueue.handleOperations(operations,values);*/
 
+        MiddleQueue_AL middleQueue = new MiddleQueue_AL();
+        middleQueue.splitInput(inputs);
+        String[]operations = middleQueue.operations;
+        int[]values = middleQueue.values;
         middleQueue.handleOperations(operations,values);
+
     }
 }
