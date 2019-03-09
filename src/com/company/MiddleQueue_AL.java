@@ -33,8 +33,8 @@ public class MiddleQueue_AL {
 
             }else if (operations[i].equals("R")){
                 list.add(values[i]);
-
             }else if (operations[i].equals("E")){
+                if (list.size()!=0){
                 int middleIndex;
                 if (list.size()%2 == 0){
                     middleIndex = (list.size()/2)-1;
@@ -43,6 +43,7 @@ public class MiddleQueue_AL {
                 }
                 System.out.println(list.get(middleIndex));
                 list.remove(middleIndex);
+                }
             }
         }
     }
