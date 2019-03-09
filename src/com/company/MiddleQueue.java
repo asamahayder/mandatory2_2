@@ -62,14 +62,6 @@ public class MiddleQueue {
         }
     }
 
-    /*public void printList(){
-        Node currentNode = head;
-        while (currentNode != null){
-            System.out.println(currentNode.value);
-            currentNode = currentNode.next;
-        }
-    }*/
-
     public void deleteMiddle(){
         int position = 0;
         Node fast = head;
@@ -78,32 +70,35 @@ public class MiddleQueue {
 
         if (isEven(size)) {
             while (fast.next.next != null) {
+                temp = slow;
                 slow = slow.next;
                 fast = fast.next.next;
                 position++;
             }
         }else{
             while (fast.next != null){
+                temp = slow;
                 slow = slow.next;
                 fast = fast.next.next;
                 position++;
             }
         }
 
-        //System.out.println("position = " + position);
-        //System.out.println("Value = " + slow.value);
-        System.out.println(slow.value);
-
         if (position == 0){
             head = temp.next;
             return;
         }
-        for (int i = 0; i < position-1; i++) {
+
+        temp.next = slow.next;
+
+        System.out.println(slow.value);
+
+        /*for (int i = 0; i < position-1; i++) {
             temp = temp.next;
         }
 
         Node next = temp.next.next;
-        temp.next = next;
+        temp.next = next;*/
         return;
     }
 
