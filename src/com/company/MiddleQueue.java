@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MiddleQueue {
-    LinkedList list = new LinkedList();
     Node head;
     Node tail;
     int size = 0;
@@ -57,19 +56,21 @@ public class MiddleQueue {
                 tail = newNode;
                 size++;
             }else if (operations[i].equals("E")){
-                deleteMiddle();
-                size--;
+                if (head != null){
+                    deleteMiddle();
+                    size--;
+                }
             }
         }
     }
 
-    public void printList(){
+    /*public void printList(){
         Node currentNode = head;
         while (currentNode != null){
             System.out.println(currentNode.value);
             currentNode = currentNode.next;
         }
-    }
+    }*/
 
     public void deleteMiddle(){
         int position = 0;
